@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+    <ul>
+                   
+        <% for (let i of Myvariable) { %> 
+            
+            <li>
+                <p><%= i.textOne %></p>
+            
+            </li>
+            
+        <% } %>
+    </ul>
+</div>
+
+    
+    <form action="/detail" method="POST">
+    <input type="text" name="textOne" placeholder="ka naam h">
+<button type="submit">Submit</button></form>
+</body>
+</html>
