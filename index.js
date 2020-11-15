@@ -47,7 +47,7 @@ const contactSchema = new mongoose.Schema({
 })
 
 
-const Contact = mongoose.model('Contact', contactSchema);
+const Contact = mongoose.model('Buxa', contactSchema);
 
 //module.exports = Contact;
 
