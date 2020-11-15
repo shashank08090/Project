@@ -47,7 +47,7 @@ const contactSchema = new mongoose.Schema({
 })
 
 
-const Contact = mongoose.model('Buxa', contactSchema);
+const Contact = mongoose.model('Ae_Bidu_Mera_Buxa_Hai_tu', contactSchema);
 
 //module.exports = Contact;
 
@@ -90,7 +90,24 @@ schar.post('/detail', (req,res)=>{
 });
 //------------------
 //------------------------
-//
+//Delete contact
+
+schar.get('/delete-contact/', function(req, res){
+    console.log(req.query);
+    let id = req.query.id
+
+    Contact.findOneAndDelete(id, function(err){
+        if(err){
+            console.log('error in deleting the object');
+            return;
+        }
+        return res.redirect('back');
+    })
+
+
+   
+});
+//-------------
 
 
 
