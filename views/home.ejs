@@ -15,6 +15,7 @@
             <li>
                 <p><%= i.ismeMeraData %></p>
                 <p> <%= i.taarekhPeTaarekh %></p>
+                <p><%= i.choice %></p>
             
             </li>
             
@@ -34,7 +35,7 @@
     <form action="/detail" method="POST">
     <input type="text" name="textOne" placeholder="your name">
     <input type="date" name = "Dat" >
-    <select>
+    <select name="choose">
         <option>personal</option>
       <option> <li>professional</li></select></option>
     </select>
