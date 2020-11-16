@@ -38,10 +38,18 @@ db.once('open', function(callback){
 
 const contactSchema = new mongoose.Schema({
 
-    textOne: {
+    ismeMeraData: {
         type: String,
+    
         required: true
     },
+
+    taarekhPeTaarekh:{
+        type:Date,
+        required:true,
+    }
+
+
   
 
 })
@@ -78,7 +86,8 @@ schar.post('/detail', (req,res)=>{
    
 
     Contact.create({
-        textOne: req.body.textOne,
+        ismeMeraData: req.body.textOne,
+        taarekhPeTaarekh:req.body.Dat,
         
     }, function(err, newContact){
         if(err){console.log('Error in creating a contact!')
