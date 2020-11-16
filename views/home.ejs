@@ -13,7 +13,8 @@
         <% for (let i of contact_list) { %> 
             
             <li>
-                <p><%= i.textOne %></p>
+                <p><%= i.ismeMeraData %></p>
+                <p> <%= i.taarekhPeTaarekh %></p>
             
             </li>
             
@@ -24,16 +25,19 @@
     <a href="/delete-contact/?id=<%= i.id %>">
         delete
     </a>
-
-    <div>
-        <input type="date" name ="dat">
-    </div>
+    
+    
     <% } %>
 
     
     
     <form action="/detail" method="POST">
     <input type="text" name="textOne" placeholder="your name">
+    <input type="date" name = "Dat" >
+    <select>
+        <option>personal</option>
+      <option> <li>professional</li></select></option>
+    </select>
 <button type="submit">Submit</button></form>
 </body>
 </html>
