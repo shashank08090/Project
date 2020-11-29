@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#todo , form{
+    height: 200px;
+    width: 60%;
+    margin: auto;
+    list-style-type:none;
+}
+#mydata 
+{
+    height: 2rem;
+    width: auto;
+    background-color: wheat;
+    font-size: 2rem;
+    border-radius: 5px;
+    display: inline;
+}
+#date
+{
+    height: 1 rem;
+    width: auto;
+    
+    font-size: 1 rem;
+    border-radius: 10px;
+}
+#choice{
+    height: 2 rem;
+    width: auto;
+    background-color: lavenderblush;
+    font-size: 2rem;
+    display: inline;
+    float: right ;
+}
+#del{
+    height: 2 rem;
+    width: 50px;
+    margin: auto;
+    background-color:lavenderblush;
+    text-decoration: none;
+    
+}
+
+form{
+    font-size: 2rem;
+}

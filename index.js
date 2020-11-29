@@ -16,7 +16,10 @@ schar.set('views', rasta.join(__dirname, 'views'));
 schar.use(char.urlencoded());
 
 //-------------
+//setting up the static CSS files
 
+schar.use(char.static('views'));
+//-----------------------
 //-Building our server
 schar.listen(4000);
 console.log("4000 pe sun ra hu");
@@ -32,9 +35,29 @@ var db=mongoose.connection;
 db.on('error', console.log.bind(console, "connection error")); 
 db.once('open', function(callback){ 
 	console.log("connection succeeded"); 
-}) 
-//----------------------
+})  
+// //----------------------
+
+//const mongoose = require('./Database/mongoose');
 //Experimental code here
+schar.get('/',function(req,res){
+    
+    
+    Contact.find({}, function(err, contacts){
+        if(err){
+            console.log("error in fetching contacts from db");
+            return;
+        }
+        return res.render('home',{
+        
+            contact_list: contacts
+        });
+    
+    })
+    })
+    
+
+
 
 const contactSchema = new mongoose.Schema({
 
@@ -59,14 +82,14 @@ const contactSchema = new mongoose.Schema({
 })
 
 
-const Contact = mongoose.model('Ae_Bidu_Mera_Buxa_Hai_tu', contactSchema);
+
 
 //module.exports = Contact;
 
 //----------------------
 //--sending a file to the server
 
-
+const Contact = mongoose.model('Ae_Bidu_Mera_Buxa_Hai_tu', contactSchema);
 schar.get('/',function(req,res){
     
     

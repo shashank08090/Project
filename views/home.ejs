@@ -4,41 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+
+
+    <style>
+
+
+
+    </style>
+
+
+
 </head>
 <body>
+
+    <form action="/detail" method="POST">
+        <input type="text" name="textOne" placeholder="your name">
+        <input type="date" name = "Dat" >
+        <select name="choose">
+            <option>personal</option>
+          <option> <li>professional</li></select></option>
+        </select>
+    <button type="submit">Create-To-Do</button></form> 
+    
 
 <div>
     <ul>
                    
         <% for (let i of contact_list) { %> 
-            
+            <div id="todo">
             <li>
-                <p><%= i.ismeMeraData %></p>
-                <p> <%= i.taarekhPeTaarekh %></p>
-                <p><%= i.choice %></p>
-            
+                <p id="mydata"><%= i.ismeMeraData %> <p id = "choice"><%= i.choice %></p></p>
+                <p id="date"> <%= i.taarekhPeTaarekh %></p>
+                
+                <a id="del"  href="/delete-contact/?id=<%= i.id %>">
+                    Delete
+                </a>
+                </div>
             </li>
             
       
     </ul>
-</div>
-<div class="delete-button">
-    <a href="/delete-contact/?id=<%= i.id %>">
-        delete
-    </a>
-    
-    
+
+
     <% } %>
 
-    
-    
-    <form action="/detail" method="POST">
-    <input type="text" name="textOne" placeholder="your name">
-    <input type="date" name = "Dat" >
-    <select name="choose">
-        <option>personal</option>
-      <option> <li>professional</li></select></option>
-    </select>
-<button type="submit">Submit</button></form>
+
 </body>
 </html>
